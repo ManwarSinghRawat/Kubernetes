@@ -1,0 +1,122 @@
+#######################################################
+	Kubernetes
+#######################################################
+
+
+What is Kuberenetes?
+	Introduction:
+		Born in google
+		Donated to CCNF in 2014  ( Open source)
+		Written in Go/Golang
+		Manage containers at scale
+		*Ref:https://github.com/kubernetes/kuberenetes
+	    Platform agnostic( run on any linux- Fedora , ubuntu , Openstack)
+
+	Architecture:
+	1. Master (Incharge)
+	2. Nodes  (Do the work)
+	
+	AppContainer + manifest file = Deployment
+	
+Master:
+1. kube-apiserver:
+	*Front-end to the control
+	*Expose the API (REST)
+	*Consumes JSON
+2. Cluster Store :
+	Persistent Storage
+	Cluster State and config
+	Uses etcd (open source key value stores, distributes, conssistent and watchable )
+3. Controller :
+	Controller of controller
+	Node controller, Endpoint controller, Namespaces Controller
+4. Kube-Scheduler:
+	Watches api server for new Pods
+	Assign work to nodes :- Affinity/anti-affinity,constrains, resources
+
+Nodes (Minions) :
+	The K8s Workers
+	
+1. Kubelet : 
+	* The main K8s agent
+	* Registers node with cluster
+	* Watch api server
+	* Instantiates pods
+	* Reports back to master
+	* Exposes endpoint on : 10255
+		* Api end points eg: /spec, /healthz, /pods
+
+
+2. Container Engine
+	*Does container management :	
+		* Pulling images
+		* Starting/Stopping containers
+	* Pulggable:
+		* Usually Docker
+		* Can be rkt
+		
+ 3. Kube-proxy
+ 	*K8s netoworking:
+ 	*Pod IP addresses
+ 		- All container in a pod share a single IP
+ 		- Load balances across all pods in a service
+ 		
+ 		
+ ####################################################
+ Declarative Model & Desired state:
+ 
+ K8s Declarating model: declare a manifest file for our requirements
+ Output : desired state.. 
+ 
+ 
+ Pods:
+ 	- Ring-fences environments
+ 		- Network stacks
+ 		- Kernel namespaces
+ 	- Run container always inside the pods
+ 	- Pods can have multiple containers
+ 	- Units of scaling in pods
+ 	
+ 	Life cycle: Born -> Live - Die
+ 	
+ 	
+Services:
+	- Higher lever abstraction
+	- Load balancing
+	- Labeling 
+
+
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 		
+
