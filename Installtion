@@ -23,3 +23,22 @@ Minikube --->   Google Container Engine ----> AWS ---> Manual Install
  	 
  	- See the dashboard:
  	 $ minikube dashboard
+ 	 
+ 	 
+ 	 
+ 	 
+ 2 Installation of K8s in Google cloud
+ 3. Installation of K8s in AWS Cloud:
+ 	1. Prequesties : Kubectl, kops, cli, domain, IAM access
+ 	3. Create bucket 
+ 	4. Create Clusters:
+ 		kops create clusters \
+ 		--cloud=aws \
+ 		--znoes=
+ 		-- dns=
+ 		--name=
+ 		--yes
+ 		
+ 4. Installation manually with kubeadm
+ 	
+ 	

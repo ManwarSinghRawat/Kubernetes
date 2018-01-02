@@ -1,0 +1,49 @@
+####################################33
+Pod Ceration
+######################################
+
+Steps:
+1. Create a yml file as below
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+	name: hello-pod
+	labels:
+		zone: prod
+		version: vi
+spec:
+	containers:
+	-	name: hello-ctr
+		image: niegelpulotion/psdfdfd-ci:letest
+		ports:
+		- containerPort: 8080
+		
+2. Create pod using below commnad:
+	kubectl create -f pod.yml
+	
+	
+	
+################################n##########
+Replication controller
+##########################################
+apiVersion: V1
+kind: ReplicationController
+metadata:
+	name: hello-rc
+spec:
+	replicas: 10
+	selector:
+		app: hello-world
+	template:
+		metadata:
+			labels:
+				app: hello-world
+		spec:
+			containers:
+			- name: hello-pod
+			  image: sdfdfd/sdd-ci:letest
+			  ports:
+			  - containerPort: 8080
